@@ -65,3 +65,21 @@ body{
 .darker-on-hover:hover{
     -webkit-filter: brightness(80%);
 }
+.absolute-position{
+    position: absolute;
+}
+
+
+
+// 
+body{
+    div.main{
+        div.movie-details-heading{
+            position: relative;
+            img.movie-details-heading-background-img{
+
+            }
+
+        }
+    }
+}
