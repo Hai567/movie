@@ -7,6 +7,7 @@ let mongoose = require("mongoose")
 let bodyParser = require("body-parser")
 let routeManager = require("./routes/routeManager")
 let SortMiddleware = require("./app/middlewares/SortMiddleware")
+let slugify = require("slugify")
 
 
 app.set("view engine", "ejs")

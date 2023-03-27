@@ -1,6 +1,22 @@
-<%- include('header') %>
+<%- include('partials/header') %>
+    <div>
+        <img width="100%" src="https://image.tmdb.org/t/p/original/<%= movieDetailsData.backdrop_path %>" alt="">
+    </div>
+    <h1><%= movieDetailsData.title %></h1>
+
+    <div>
+        <iframe
+        id="player"
+        name="player"
+        width="800"
+        height="400"
+        scrolling="no"
+        style="overflow:hidden"
+        webkitAllowFullScreen mozAllowFullScreen allowFullScreen
+        frameborder="0"
+        src="<%= movieURL %>">
+        </iframe>
+    </div>
 
 
-
-
-<%- include('footer') %>
+<%- include('partials/footer') %>
