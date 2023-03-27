@@ -1,0 +1,81 @@
+<%- include('partials/header') %>
+    <div class="box-container">
+        <div class="main" style="margin: 4em 0;">
+            <div class="main-film-box-container">
+                <div class="main-film-select" style="display: flex;">
+                    <% if (_sortCategory.enable) { %>
+                        <% if (_sortCategory.category === "discover") { %>
+                            <h3><a href="?_sort-category&category=discover" style="text-decoration: none; color:#666464;">Discover</a></h3>
+                            <h3><a href="?_sort-category&category=tv" style="text-decoration: none; color:#D8D8D8">TV</a></h3>
+                            <h3><a href="?_sort-category&category=high-rated" style="text-decoration: none; color:#D8D8D8">High Rated</a></h3>
+                         <% } else if (_sortCategory.category === "tv") { %>
+                            <h3><a href="?_sort-category&category=discover" style="text-decoration: none; color:#D8D8D8;">Discover</a></h3>
+                            <h3><a href="?_sort-category&category=tv" style="text-decoration: none; color:#666464">TV</a></h3>
+                            <h3><a href="?_sort-category&category=high-rated" style="text-decoration: none; color:#D8D8D8">High Rated</a></h3>
+                        <% } else if (_sortCategory.category === "high-rated") { %>
+                            <h3><a href="?_sort-category&category=discover" style="text-decoration: none; color:#D8D8D8;">Discover</a></h3>
+                            <h3><a href="?_sort-category&category=tv" style="text-decoration: none; color:#D8D8D8">TV</a></h3>
+                            <h3><a href="?_sort-category&category=high-rated" style="text-decoration: none; color:#666464">High Rated</a></h3>
+                        <% } %>  
+                    <% } else { %>
+                        <h3><a href="?_sort-category&category=discover" style="text-decoration: none; color:#D8D8D8;">Discover</a></h3>
+                        <h3><a href="?_sort-category&category=tv" style="text-decoration: none; color:#D8D8D8">TV</a></h3>
+                        <h3><a href="?_sort-category&category=high-rated" style="text-decoration: none; color:#D8D8D8">High Rated</a></h3>
+                    <% } %>
+                </div>
+                <hr style="width: 80%; text-align: center; margin: auto;">
+                <div class="main-films-container" style="">
+                    <% recommendingMovies.results.forEach(recommendingMovie => { %>
+                        <a class="film-card" style="text-decoration: none;" href="">
+                            <div class="card darker-on-hover" style="width: 12rem; transition: .5s;">
+                                <div class="main-film-thumbnail">
+                                    <img style="" src="https://image.tmdb.org/t/p/w500/<%= recommendingMovie.poster_path %>" class="card-img-top" alt="...">
+                                    <p class="release-year"><%= recommendingMovie.release_date[0] %><%= recommendingMovie.release_date[1] %><%= recommendingMovie.release_date[2] %><%= recommendingMovie.release_date[3] %></p>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text title" style="text-align: center; color: black;"><%= recommendingMovie.original_title %></p>
+                                </div>
+                          </div>
+                        </a>
+                    <% }) %>
+                </div>
+            </div>
+            <div class="side-bar" style="margin-right: 4em">
+                <h5 style="margin-bottom: 1.5em">Trending Movies</h5>
+                <% for( let i = 0; i < 5; i++ ) { %>
+                    <a href="" style="text-decoration: none; color: black;">
+                        <div class="weekly-trending-movies-card" style="">
+                            <div class="card mb-3 darker-on-hover" style="max-width: 440px; border: 0; transition: .5s;">
+                                <div class="row g-0">
+                                <div class="col-md-6" style="width: 30%;">
+                                    <div class="sidebar-thumbnail" style="position: relative">
+                                        <img src="https://image.tmdb.org/t/p/w500/<%= weeklyTrendingMovies.results[i].poster_path %>" class="img-fluid rounded-start rounded" alt="...">
+                                        <p style="display: inline-block;
+                                        position: absolute;
+                                        padding: 2px 5px;
+                                        font-size: 13px;
+                                        background-color: #FFD523;
+                                        border-radius: 100%;
+                                        top:2px;
+                                        left:2px;
+                                        margin: 0;">#<%= i + 1 %></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6" style="padding-left: 4%; flex-grow: 1;">
+                                    <div class="card-body" style="padding-top: 0 !important;">
+                                    <p class="card-title" style="font-weight: bold;"><%= weeklyTrendingMovies.results[i].original_title %></p>
+                                    <p class="card-text">Number</p>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                <% } %>
+            </div>
+        </div>
+
+    </div>
+
+
+<%- include('partials/footer') %>

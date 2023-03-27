@@ -1,0 +1,67 @@
+// @import "_variables";
+
+body{
+    padding: 0;
+    margin: 0;
+    div.box-container{
+        div.main{
+            display: grid;
+            grid-template-columns: repeat(14, 1fr);
+            div.main-film-box-container{
+                grid-column: 1/12;
+                div.main-film-select{
+                    margin-left: 12%;
+                    gap: 1.4em;
+                    h3{
+                        a{
+                            transition: .3s;
+                        }
+                        a:hover{
+                            color: #706e6e !important;
+                        }
+                    }
+                }
+                div.main-films-container{
+                    padding: 1em 3.5em;
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 20px;
+                    justify-content: center;
+                    a.film-card{
+                        -webkit-filter: brightness(100%);
+                        transition: .5s;
+                        div.card{
+                            div.main-film-thumbnail{
+                                position: relative;
+                                p.release-year{
+                                    position: absolute;
+                                    padding: 5px 10px;
+                                    margin: 0;
+                                    background-color: green;
+                                    border-radius: 100pc;
+                                    color: white;
+                                    bottom: 6px;
+                                    right: 4px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            div.side-bar{
+                grid-column: 12/15;
+                h5{
+                    text-align: center;
+                    padding: 10px 10px;
+                    border-radius: 60px;
+                    background-color: #635985;
+                    font-size: medium;
+                    color: white;
+                }
+            }
+        }
+    }
+}
+.darker-on-hover:hover{
+    -webkit-filter: brightness(80%);
+}
