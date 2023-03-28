@@ -1,24 +1,31 @@
 <%- include('partials/header') %>
-    <div class="main" style="display: contents;">
+    <div class="movie-main">
         <div class="movie-details-heading" style="width: 100%;">
             <img class="text-light movie-details-heading-background-img" style="text-align: center;" width="75%" src="https://image.tmdb.org/t/p/original/<%= movieDetailsData.backdrop_path %>" alt="">
-            <h3 class="text-light absolute-position movie-details-heading-title"><%= movieDetailsData.title %></h3>
-            <p class="text-light absolute-position movie-details-heading-overview"><%= movieDetailsData.overview %></p>
-            <p class="text-light absolute-position movie-details-heading-release-date"><%= movieDetailsData.release_date %></p>
+            <div class="movie-details-heading-all absolute-position">
+                <h3 class="text-light movie-details-heading-title"><%= movieDetailsData.title %></h3>
+                <div>
+                    <p class="movie-details-heading-vote-average" style="color: #EBB02D;">IMDB: <%= movieDetailsData.vote_average %> / 10</p>
+                    <p class="text-light movie-details-heading-release-date">Release Date: <%= movieDetailsData.release_date %></p>
+                </div>
+                <div class="movie-details-heading-genres" style="">
+                    <p class="text-light">Genres: </p>
+                    <% movieDetailsData.genres.forEach((genre) => { %>
+                        <p class="text-light"><%= genre.name %></p>
+                    <% }) %>
+                </div>
+                <p class="text-light movie-details-heading-overview"><%= movieDetailsData.overview %></p>
+            </div>
+            
         </div>
-    
-        <div>
-            <iframe
-            id="player"
-            name="player"
-            width="800"
-            height="400"
-            scrolling="no"
-            style="overflow:hidden"
-            webkitAllowFullScreen mozAllowFullScreen allowFullScreen
-            frameborder="0"
-            src="<%= movieURL %>">
-            </iframe>
+            
+        <div class="movie-section">
+            <div class="responsive-iframe-container">
+                <iframe class="responsive-iframe" webkitAllowFullScreen mozAllowFullScreen height="315" width="560" allowfullscreen="" frameborder="0" src="<%= movieURL %>"></iframe>
+            </div>
+            <div class="side-bar">
+                <h6 class="text-light">You may like</h6>   
+            </div>
         </div>
     </div>
 

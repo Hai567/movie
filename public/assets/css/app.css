@@ -49,5 +49,66 @@ body {
 .absolute-position {
   position: absolute; }
 
-body div.main div.movie-details-heading {
-  position: relative; }
+body {
+  background-color: #182747; }
+  body div.movie-main {
+    min-height: 100vh;
+    width: 100%;
+    position: relative; }
+    body div.movie-main div.movie-details-heading {
+      display: grid;
+      justify-items: center;
+      margin-bottom: 2em; }
+      body div.movie-main div.movie-details-heading img.movie-details-heading-background-img {
+        -webkit-filter: brightness(60%); }
+      body div.movie-main div.movie-details-heading div.movie-details-heading-all {
+        width: 60%;
+        margin-top: 6em; }
+        body div.movie-main div.movie-details-heading div.movie-details-heading-all h3.movie-details-heading-title {
+          text-align: center; }
+        body div.movie-main div.movie-details-heading div.movie-details-heading-all div {
+          font-size: 14px;
+          text-align: center;
+          margin-top: 2em; }
+          body div.movie-main div.movie-details-heading div.movie-details-heading-all div p.movie-details-heading-vote-average {
+            display: inline-block; }
+          body div.movie-main div.movie-details-heading div.movie-details-heading-all div p.movie-details-heading-release-date {
+            margin-left: 2.5em;
+            display: inline-block; }
+        body div.movie-main div.movie-details-heading div.movie-details-heading-all div.movie-details-heading-genres {
+          display: flex;
+          justify-content: center;
+          gap: 2em;
+          margin: 0; }
+        body div.movie-main div.movie-details-heading div.movie-details-heading-all p.movie-details-heading-overview {
+          margin-top: 2em;
+          line-height: 1.7em; }
+    body div.movie-main div.movie-section {
+      width: 75%;
+      display: flex;
+      justify-content: left;
+      margin: auto; }
+      body div.movie-main div.movie-section .responsive-iframe-container {
+        position: relative;
+        width: 75%;
+        padding-top: 42%;
+        /* 4:3 Aspect Ratio */ }
+        body div.movie-main div.movie-section .responsive-iframe-container .responsive-iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%; }
+      body div.movie-main div.movie-section div.side-bar {
+        flex-grow: 1;
+        display: flex;
+        align-content: flex-start;
+        justify-content: center; }
+        body div.movie-main div.movie-section div.side-bar h6 {
+          text-align: center;
+          padding: 2em;
+          width: 85%;
+          padding: 3px 0 6px 0;
+          border-radius: 100px;
+          background-color: #BFACE2;
+          height: fit-content; }
