@@ -24,8 +24,16 @@ class siteController {
             try { 
                 let movieDetailsRawResponses = await (fetch(`https://api.themoviedb.org/3/movie/${req.params.movieID}?api_key=${API_KEY}`))
                 movieDetailsRawResponses.json()
-                    .then(movieDetailsData => {
-                        res.render("movie-details", {movieDetailsData, movieURL: `https://2embed.org/embed/movie?imdb=${movieDetailsData.imdb_id}`})
+                    .then((movieDetailsData) => {
+                        let sameGenreMovieURL = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=`
+                        let genres = movieDetailsData.genres
+                        async function getMovieByGenre(){
+                            let sameGenreMoviesResponse = await Promise.all([fetch(sameGenreMovieURL+genres[0].id)])
+                            let sameGenreMovies = await sameGenreMoviesResponse[0].json()
+                            let currentMovieID = req.params.movieID
+                            res.render("movie-details", {movieDetailsData, movieURL: `https://2embed.org/embed/movie?imdb=${movieDetailsData.imdb_id}`, sameGenreMovies, currentMovieID})
+                        }
+                        getMovieByGenre()
                     })
             } catch (error) {
                 console.log(`Error Encounter While Fetching Data From TMDB In siteController, ${error}`)

@@ -30,7 +30,12 @@
                             <div class="card darker-on-hover" style="width: 12rem; transition: .5s;">
                                 <div class="main-film-thumbnail">
                                     <img style="" src="https://image.tmdb.org/t/p/w500/<%= recommendingMovie.poster_path %>" class="card-img-top" alt="...">
-                                    <p class="release-year"><%= recommendingMovie.release_date[0] %><%= recommendingMovie.release_date[1] %><%= recommendingMovie.release_date[2] %><%= recommendingMovie.release_date[3] %></p>
+                                    <% if (typeof(recommendingMovie.release_date)  === "string") { %>
+                                        <% const [y,m,d] = recommendingMovie.release_date.split('-') %>
+                                        <p class="release-year"><%= y %></p>
+                                    <% } else { %>
+                                        <p class="release-year">Coming Soon</p>
+                                    <% } %>
                                 </div>
                                 <div class="card-body">
                                     <p class="card-text title" style="text-align: center; color: black;"><%= recommendingMovie.title %></p>

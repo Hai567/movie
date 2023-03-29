@@ -34,6 +34,7 @@ body{
                             div.main-film-thumbnail{
                                 position: relative;
                                 p.release-year{
+                                    font-size: 12px;
                                     position: absolute;
                                     padding: 5px 10px;
                                     margin: 0;
@@ -120,13 +121,16 @@ body{
         }
         div.movie-section{ 
             width: 75%;
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             justify-content: left;
             margin: auto;
             .responsive-iframe-container{
+                grid-column: 1/3;
                 position: relative;
-                width: 75%;
+                width: 100%;
                 padding-top: 42%; /* 4:3 Aspect Ratio */
+                max-height: 50%;
                 .responsive-iframe{
                     position: absolute;
                     top: 0;
@@ -135,19 +139,23 @@ body{
                     height: 100%;
                 }
             }
-            div.side-bar{
-                flex-grow: 1;
-                display: flex;
-                align-content: flex-start;
+            div.movie-section-side-bar{
                 justify-content: center;
+                display: flex;
+                flex-wrap: wrap;
                 h6{
                     text-align: center;
                     padding: 2em;
-                    width: 85%;
+                    width: 92%;
                     padding: 3px 0 6px 0;
                     border-radius: 100px;
                     background-color: #BFACE2;
                     height: fit-content;
+                }
+                width: 100%;
+                grid-column: 3/4;
+                div.movie-section-side-bar-same-genres-movies{
+                    width: 80%;
                 }
             }
         }

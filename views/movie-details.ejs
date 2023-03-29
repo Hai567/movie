@@ -1,7 +1,13 @@
 <%- include('partials/header') %>
+<% if (movieDetailsData.vote_average === 0) { %>
+    <h1 class="text-light" style="text-align: center; margin-top: 3em;">Coming Soon</h1>
+    <br>
+    <p class="text-light" style="text-align: center;"><%= movieDetailsData.overview %></p>
+<% } else { %>
     <div class="movie-main">
         <div class="movie-details-heading" style="width: 100%;">
-            <img class="text-light movie-details-heading-background-img" style="text-align: center;" width="75%" src="https://image.tmdb.org/t/p/original/<%= movieDetailsData.backdrop_path %>" alt="">
+                
+                <img class="text-light movie-details-heading-background-img" style="text-align: center;" width="75%" src="https://image.tmdb.org/t/p/original/<%= movieDetailsData.backdrop_path %>" alt="">
             <div class="movie-details-heading-all absolute-position">
                 <h3 class="text-light movie-details-heading-title"><%= movieDetailsData.title %></h3>
                 <div>
@@ -23,11 +29,36 @@
             <div class="responsive-iframe-container">
                 <iframe class="responsive-iframe" webkitAllowFullScreen mozAllowFullScreen height="315" width="560" allowfullscreen="" frameborder="0" src="<%= movieURL %>"></iframe>
             </div>
-            <div class="side-bar">
-                <h6 class="text-light">You may like</h6>   
+            <div class="movie-section-side-bar">
+                <h6 class="text-light">You may like</h6>
+                <div class="movie-section-side-bar-same-genres-movies">
+                    <% for( let i = 0; i < 6; i++ ) { %>
+                        <% if (sameGenreMovies.results[i].id === Number(currentMovieID)) { %>
+                            <% i++ %>
+                        <% } %>
+                        <a style="text-decoration: none; color:black" href="/watch/<%= sameGenreMovies.results[i].id %>">
+                            <div class="card mb-3 darker-on-hover" style="max-width: 440px; border: 0; transition: .5s;">
+                                <div class="row g-0">
+                                <div class="col-md-6" style="width: 30%;">
+                                    <div class="sidebar-thumbnail" style="position: relative">
+                                        <img src="https://image.tmdb.org/t/p/w500/<%= sameGenreMovies.results[i].poster_path %>" class="img-fluid rounded-start rounded" alt="...">
+                                    </div>
+                                </div>
+                                <div class="col-md-6" style="padding-left: 4%; flex-grow: 1;">
+                                    <div class="card-body" style="padding-top: 0 !important;">
+                                    <p class="card-title" style="font-weight: bold;"><%= sameGenreMovies.results[i].title %></p>
+                                    <p class="card-text">Number</p>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </a>
+                    <% } %>
+                </div>
             </div>
         </div>
     </div>
+<% } %>
 
 
 <%- include('partials/footer') %>
