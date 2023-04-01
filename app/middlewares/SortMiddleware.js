@@ -11,16 +11,3 @@ module.exports = function SortMiddleware (req, res, next){
 
     next()
 }
-// <% switch (_sortCategory.category) { %>
-//     <% case "discover": %>
-//         <h3><a href="?_sort-category&category=discover" style="text-decoration: none; color:#666464;">Discover</a></h3>
-//         <% break; %>
-//     <% case "tv": %>
-//         <h3><a href="?_sort-category&category=tv" style="text-decoration: none; color:#666464">TV</a></h3>
-//         <% break; %>
-//     <% case "high-rated": %>
-//         <h3><a href="?_sort-category&category=high-rated" style="text-decoration: none; color:#666464">High Rated</a></h3>
-//         <% break; %>
-//     <% default: %>
-//         <% break; %>
-// <% } %>

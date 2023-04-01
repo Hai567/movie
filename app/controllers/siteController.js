@@ -1,6 +1,5 @@
 let API_KEY = process.env.API_KEY
 class siteController {
-
     homePage(req, res, next){
         let recommendingMoviesURL = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}`
         let weeklyTrendingMoviesURL = `https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}`

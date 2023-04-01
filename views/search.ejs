@@ -1,4 +1,4 @@
-<%- include('partials/header') %>
+<%- include('partials/header', {allGenres}) %>
 
     <% if (allSearchedFilmData.length === 0) { %>
         <h5 class="text-light" style="text-align: center; margin-top: 4em;">Can not find "<%= searchQuery %>" that you are looking for, please try another</h5>

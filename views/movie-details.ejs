@@ -1,4 +1,4 @@
-<%- include('partials/header') %>
+<%- include('partials/header', {allGenres}) %>
 <% if (movieDetailsData.status != "Released" && movieDetailsData.vote_count === 0 && movieDetailsData.backdrop_path === null) { %>
     <h1 class="text-light" style="text-align: center; margin-top: 3em;">Coming Soon</h1>
     <br>
