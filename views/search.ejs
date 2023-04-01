@@ -1,0 +1,49 @@
+<%- include('partials/header') %>
+
+    <% if (allSearchedFilmData.length === 0) { %>
+        <h5 class="text-light" style="text-align: center; margin-top: 4em;">Can not find "<%= searchQuery %>" that you are looking for, please try another</h5>
+    <% } else { %>
+        <div class="searched-movies">
+            <% allSearchedFilmData.forEach(function(searchedFilmData){ %>
+                <% if (searchedFilmData.backdrop_path === null) { %>
+                    <a class="film-card none-display" style="text-decoration: none;" href="/movie/watch/<%= searchedFilmData.id %>">
+                        <div class="card darker-on-hover" style="width: 12rem; transition: .5s;">
+                            <div class="main-film-thumbnail">
+                                <img style="" src="https://image.tmdb.org/t/p/w500/<%= searchedFilmData.poster_path %>" class="card-img-top" alt="...">
+                                <% if (typeof(searchedFilmData.release_date)  === "string") { %>
+                                    <% const [y,m,d] = searchedFilmData.release_date.split('-') %>
+                                    <p class="release-year"><%= y %></p>
+                                <% } else { %>
+                                    <p class="release-year">Coming Soon</p>
+                                <% } %>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text title" style="text-align: center; color: black;"><%= searchedFilmData.title %></p>
+                            </div>
+                      </div>
+                    </a>
+                <% } else { %>
+                    <a class="film-card" style="text-decoration: none;" href="/movie/watch/<%= searchedFilmData.id %>">
+                        <div class="card darker-on-hover" style="width: 12rem; transition: .5s;">
+                            <div class="main-film-thumbnail">
+                                <img style="" src="https://image.tmdb.org/t/p/w500/<%= searchedFilmData.poster_path %>" class="card-img-top" alt="...">
+                                <% if (typeof(searchedFilmData.release_date)  === "string") { %>
+                                    <% const [y,m,d] = searchedFilmData.release_date.split('-') %>
+                                    <p class="release-year"><%= y %></p>
+                                <% } else { %>
+                                    <p class="release-year">Coming Soon</p>
+                                <% } %>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text title" style="text-align: center; color: black;"><%= searchedFilmData.title %></p>
+                            </div>
+                      </div>
+                    </a>
+                <% } %>
+            <% }) %>
+        </div>
+    <% } %>
+
+
+
+<%- include('partials/footer') %>

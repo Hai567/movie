@@ -1,5 +1,4 @@
 // @import "_variables";
-
 body{
     padding: 0;
     margin: 0;
@@ -17,7 +16,7 @@ body{
                             transition: .3s;
                         }
                         a:hover{
-                            color: #706e6e !important;
+                            color: #D8D8D8 !important;
                         }
                     }
                 }
@@ -68,6 +67,9 @@ body{
 }
 .absolute-position{
     position: absolute;
+}
+.none-display{
+    display: none;
 }
 
 
@@ -156,6 +158,37 @@ body{
                 grid-column: 3/4;
                 div.movie-section-side-bar-same-genres-movies{
                     width: 80%;
+                }
+            }
+        }
+    }
+}
+
+
+//
+body{
+    div.searched-movies{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        width: 80%;
+        margin: auto;
+        a{
+            div{
+                div.main-film-thumbnail{
+                    position: relative;
+                    p.release-year{
+                        font-size: 12px;
+                        position: absolute;
+                        padding: 5px 10px;
+                        margin: 0;
+                        background-color: green;
+                        border-radius: 100pc;
+                        color: white;
+                        bottom: 6px;
+                        right: 4px;
+                    }
                 }
             }
         }

@@ -12,7 +12,7 @@ body {
         body div.box-container div.main div.main-film-box-container div.main-film-select h3 a {
           transition: .3s; }
         body div.box-container div.main div.main-film-box-container div.main-film-select h3 a:hover {
-          color: #706e6e !important; }
+          color: #D8D8D8 !important; }
       body div.box-container div.main div.main-film-box-container div.main-films-container {
         padding: 1em 3.5em;
         display: flex;
@@ -49,6 +49,9 @@ body {
 
 .absolute-position {
   position: absolute; }
+
+.none-display {
+  display: none; }
 
 body {
   background-color: #182747; }
@@ -119,3 +122,23 @@ body {
           height: fit-content; }
         body div.movie-main div.movie-section div.movie-section-side-bar div.movie-section-side-bar-same-genres-movies {
           width: 80%; }
+
+body div.searched-movies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 80%;
+  margin: auto; }
+  body div.searched-movies a div div.main-film-thumbnail {
+    position: relative; }
+    body div.searched-movies a div div.main-film-thumbnail p.release-year {
+      font-size: 12px;
+      position: absolute;
+      padding: 5px 10px;
+      margin: 0;
+      background-color: green;
+      border-radius: 100pc;
+      color: white;
+      bottom: 6px;
+      right: 4px; }
