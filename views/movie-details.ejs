@@ -16,7 +16,7 @@
                     <p class="movie-details-heading-vote-average" style="color: #EBB02D;">IMDB: <%= movieDetailsData.vote_average %> / 10</p>
                     <p class="text-light movie-details-heading-release-date">Release Date: <%= movieDetailsData.release_date %></p>
                 </div>
-                <div class="movie-details-heading-genres" style="">
+                <div class="movie-details-heading-genres">
                     <p class="text-light">Genres: </p>
                     <% movieDetailsData.genres.forEach((genre) => { %>
                         <p class="text-light"><%= genre.name %></p>

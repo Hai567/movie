@@ -9,7 +9,7 @@
                     <a class="film-card none-display" style="text-decoration: none;" href="/movie/watch/<%= searchedFilmData.id %>">
                         <div class="card darker-on-hover" style="width: 12rem; transition: .5s;">
                             <div class="main-film-thumbnail">
-                                <img style="" src="https://image.tmdb.org/t/p/w500/<%= searchedFilmData.poster_path %>" class="card-img-top" alt="...">
+                                <img src="https://image.tmdb.org/t/p/w500/<%= searchedFilmData.poster_path %>" class="card-img-top" alt="...">
                                 <% if (typeof(searchedFilmData.release_date)  === "string") { %>
                                     <% const [y,m,d] = searchedFilmData.release_date.split('-') %>
                                     <p class="release-year"><%= y %></p>
@@ -26,7 +26,7 @@
                     <a class="film-card" style="text-decoration: none;" href="/movie/watch/<%= searchedFilmData.id %>">
                         <div class="card darker-on-hover" style="width: 12rem; transition: .5s;">
                             <div class="main-film-thumbnail">
-                                <img style="" src="https://image.tmdb.org/t/p/w500/<%= searchedFilmData.poster_path %>" class="card-img-top" alt="...">
+                                <img src="https://image.tmdb.org/t/p/w500/<%= searchedFilmData.poster_path %>" class="card-img-top" alt="...">
                                 <% if (typeof(searchedFilmData.release_date)  === "string") { %>
                                     <% const [y,m,d] = searchedFilmData.release_date.split('-') %>
                                     <p class="release-year"><%= y %></p>

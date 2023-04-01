@@ -20,12 +20,12 @@
                     <% } %>
                 </div>
                 <hr style="width: 80%; text-align: center; margin: auto; color: white;">
-                <div class="main-films-container" style="">
+                <div class="main-films-container">
                     <% recommendingMovies.results.forEach(recommendingMovie => { %>
                         <a class="film-card" style="text-decoration: none;" href="/movie/watch/<%= recommendingMovie.id %>">
                             <div class="card darker-on-hover" style="width: 12rem; transition: .5s;">
                                 <div class="main-film-thumbnail">
-                                    <img style="" src="https://image.tmdb.org/t/p/w500/<%= recommendingMovie.poster_path %>" class="card-img-top" alt="...">
+                                    <img src="https://image.tmdb.org/t/p/w500/<%= recommendingMovie.poster_path %>" class="card-img-top" alt="...">
                                     <% if (typeof(recommendingMovie.release_date)  === "string") { %>
                                         <% const [y,m,d] = recommendingMovie.release_date.split('-') %>
                                         <p class="release-year"><%= y %></p>
@@ -45,7 +45,7 @@
                 <h5 style="margin-bottom: 1.5em">Trending Movies</h5>
                 <% for( let i = 0; i < 5; i++ ) { %>
                     <a href="/movie/watch/<%= weeklyTrendingMovies.results[i].id %>" style="text-decoration: none; color: black;">
-                        <div class="weekly-trending-movies-card" style="">
+                        <div class="weekly-trending-movies-card">
                             <div class="card mb-3 darker-on-hover" style="max-width: 440px; border: 0; transition: .5s;">
                                 <div class="row g-0">
                                 <div class="col-md-6" style="width: 30%;">
