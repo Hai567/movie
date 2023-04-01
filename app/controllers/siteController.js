@@ -1,4 +1,4 @@
-let API_KEY = "1b8102c1e52c1cbbf4197b9c7c0f28ad"
+let API_KEY = process.env.API_KEY
 class siteController {
 
     homePage(req, res, next){

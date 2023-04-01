@@ -1,5 +1,6 @@
+require('dotenv').config()
 let express = require("express")
-const { json } = require("stream/consumers")
+let { json } = require("stream/consumers")
 let app = express()
 let PORT = process.env.PORT || 3000
 let ejs = require("ejs")
