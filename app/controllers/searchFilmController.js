@@ -1,6 +1,7 @@
 let API_KEY = process.env.API_KEY
 class searchFilmController {
 
+    // [POST] /search
     index(req, res, next){
         let searchQuery = req.body["search-query"]
         let searchFilm = async function(){

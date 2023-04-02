@@ -5,9 +5,11 @@ body {
     display: grid;
     grid-template-columns: repeat(14, 1fr); }
     body div.box-container div.main div.main-film-box-container {
-      grid-column: 1/12; }
+      grid-column: 1/12;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; }
       body div.box-container div.main div.main-film-box-container div.main-film-select {
-        margin-left: 12%;
         gap: 1.4em; }
         body div.box-container div.main div.main-film-box-container div.main-film-select h3 a {
           transition: .3s; }
@@ -22,18 +24,20 @@ body {
         body div.box-container div.main div.main-film-box-container div.main-films-container a.film-card {
           -webkit-filter: brightness(100%);
           transition: .5s; }
-          body div.box-container div.main div.main-film-box-container div.main-films-container a.film-card div.card div.main-film-thumbnail {
-            position: relative; }
-            body div.box-container div.main div.main-film-box-container div.main-films-container a.film-card div.card div.main-film-thumbnail p.release-year {
-              font-size: 12px;
-              position: absolute;
-              padding: 5px 10px;
-              margin: 0;
-              background-color: green;
-              border-radius: 100pc;
-              color: white;
-              bottom: 6px;
-              right: 4px; }
+          body div.box-container div.main div.main-film-box-container div.main-films-container a.film-card div.card {
+            width: 12rem; }
+            body div.box-container div.main div.main-film-box-container div.main-films-container a.film-card div.card div.main-film-thumbnail {
+              position: relative; }
+              body div.box-container div.main div.main-film-box-container div.main-films-container a.film-card div.card div.main-film-thumbnail p.release-year {
+                font-size: 12px;
+                position: absolute;
+                padding: 5px 10px;
+                margin: 0;
+                background-color: green;
+                border-radius: 100pc;
+                color: white;
+                bottom: 6px;
+                right: 4px; }
     body div.box-container div.main div.side-bar {
       grid-column: 12/15; }
       body div.box-container div.main div.side-bar h5 {
@@ -43,6 +47,31 @@ body {
         background-color: #635985;
         font-size: medium;
         color: white; }
+
+@media all and (max-width: 1024px) {
+  div.main {
+    display: block !important; }
+    div.main div.main-film-box-container div.main-films-container a.film-card div.card {
+      width: 9em !important; }
+    div.main div.side-bar {
+      display: none; }
+  div.movie-main div.movie-details-heading img.movie-details-heading-background-img {
+    width: 100% !important; }
+  div.movie-main div.movie-details-heading div.movie-details-heading-all {
+    width: 85% !important;
+    margin-top: 1em !important; }
+  div.movie-main div.movie-section {
+    display: block !important; }
+    div.movie-main div.movie-section div.movie-section-side-bar {
+      display: none !important; } }
+
+@media all and (max-width: 568px) {
+  div.movie-section {
+    width: 100% !important; }
+    div.movie-section div.responsive-iframe-container {
+      padding-top: 55% !important; }
+  p.movie-details-heading-overview {
+    display: none !important; } }
 
 .darker-on-hover:hover {
   -webkit-filter: brightness(80%); }
@@ -97,7 +126,7 @@ body {
         grid-column: 1/3;
         position: relative;
         width: 100%;
-        padding-top: 42%;
+        padding-top: 55%;
         /* 4:3 Aspect Ratio */
         max-height: 50%; }
         body div.movie-main div.movie-section .responsive-iframe-container .responsive-iframe {
@@ -123,16 +152,17 @@ body {
         body div.movie-main div.movie-section div.movie-section-side-bar div.movie-section-side-bar-same-genres-movies {
           width: 80%; }
 
-body div.searched-movies {
+body div.searched-movies, body div.movies-by-genre {
+  margin-top: 2em !important;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
   width: 80%;
   margin: auto; }
-  body div.searched-movies a div div.main-film-thumbnail {
+  body div.searched-movies a div div.main-film-thumbnail, body div.movies-by-genre a div div.main-film-thumbnail {
     position: relative; }
-    body div.searched-movies a div div.main-film-thumbnail p.release-year {
+    body div.searched-movies a div div.main-film-thumbnail p.release-year, body div.movies-by-genre a div div.main-film-thumbnail p.release-year {
       font-size: 12px;
       position: absolute;
       padding: 5px 10px;

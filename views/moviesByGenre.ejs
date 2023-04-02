@@ -1,0 +1,46 @@
+<%- include('partials/header', {allGenres}) %>
+
+    <div class="movies-by-genre">
+        <% moviesByGenre.forEach(function(movie){ %>
+            <% if (movie.backdrop_path === null) { %>
+                <a class="film-card none-display" style="text-decoration: none;" href="/movie/watch/<%= movie.id %>">
+                    <div class="card darker-on-hover" style="width: 12rem; transition: .5s;">
+                        <div class="main-film-thumbnail">
+                            <img src="https://image.tmdb.org/t/p/w500/<%= movie.poster_path %>" class="card-img-top" alt="...">
+                            <% if (typeof(movie.release_date)  === "string") { %>
+                                <% const [y,m,d] = movie.release_date.split('-') %>
+                                <p class="release-year"><%= y %></p>
+                            <% } else { %>
+                                <p class="release-year">Coming Soon</p>
+                            <% } %>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text title" style="text-align: center; color: black;"><%= movie.title %></p>
+                        </div>
+                  </div>
+                </a>
+            <% } else { %>
+                <a class="film-card" style="text-decoration: none;" href="/movie/watch/<%= movie.id %>">
+                    <div class="card darker-on-hover" style="width: 12rem; transition: .5s;">
+                        <div class="main-film-thumbnail">
+                            <img src="https://image.tmdb.org/t/p/w500/<%= movie.poster_path %>" class="card-img-top" alt="...">
+                            <% if (typeof(movie.release_date)  === "string") { %>
+                                <% const [y,m,d] = movie.release_date.split('-') %>
+                                <p class="release-year"><%= y %></p>
+                            <% } else { %>
+                                <p class="release-year">Coming Soon</p>
+                            <% } %>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text title" style="text-align: center; color: black;"><%= movie.title %></p>
+                        </div>
+                  </div>
+                </a>
+            <% } %>
+        <% }) %>
+
+    </div>
+
+
+
+<%- include('partials/footer') %>

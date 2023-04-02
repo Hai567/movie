@@ -19,17 +19,18 @@
                         <h3><a href="?_sort-category&category=high-rated-movie" style="text-decoration: none; color:#666464">High Rated</a></h3>
                     <% } %>
                 </div>
+                <br>
                 <hr style="width: 80%; text-align: center; margin: auto; color: white;">
                 <div class="main-films-container">
                     <% recommendingMovies.results.forEach(recommendingMovie => { %>
                         <a class="film-card" style="text-decoration: none;" href="/movie/watch/<%= recommendingMovie.id %>">
-                            <div class="card darker-on-hover" style="width: 12rem; transition: .5s;">
+                            <div class="card darker-on-hover" style="transition: .5s;">
                                 <div class="main-film-thumbnail">
                                     <img src="https://image.tmdb.org/t/p/w500/<%= recommendingMovie.poster_path %>" class="card-img-top" alt="...">
                                     <% if (typeof(recommendingMovie.release_date)  === "string") { %>
                                         <% const [y,m,d] = recommendingMovie.release_date.split('-') %>
                                         <p class="release-year"><%= y %></p>
-                                    <% } else { %>
+                                    <% } else { %> 
                                         <p class="release-year">Coming Soon</p>
                                     <% } %>
                                 </div>
@@ -37,10 +38,17 @@
                                     <p class="card-text title" style="text-align: center; color: black;"><%= recommendingMovie.title %></p>
                                 </div>
                           </div>
-                        </a>
+                        </a> 
                     <% }) %>
                 </div>
+                <% if (recommendingMovies.total_pages > 1) { %>
+                    <button style="flex-grow:.75; margin-top: 1em;" type="button" class="btn btn-light">See More</button>
+                <% } %>
             </div>
+
+
+
+
             <div class="side-bar" style="margin-right: 4em">
                 <h5 style="margin-bottom: 1.5em">Trending Movies</h5>
                 <% for( let i = 0; i < 5; i++ ) { %>

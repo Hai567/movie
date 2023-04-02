@@ -1,5 +1,6 @@
 let API_KEY = process.env.API_KEY
 class siteController {
+    // [GET] /
     homePage(req, res, next){
         let recommendingMoviesURL = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}`
         let weeklyTrendingMoviesURL = `https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}`
@@ -36,6 +37,7 @@ class siteController {
         getData()
     } 
 
+    // [GET] /movie/watch/:movieID
     movieDetails(req, res, next) {
         async function getData(){
             try { 
