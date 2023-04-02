@@ -3,15 +3,16 @@ class genreRouter {
 
     // [GET] /genre/:genreID
     index(req, res, next){
-        let requestGenre = req.params.genreID
+        let genreID = req.params.genreID
+        let genreName = req.query.genre
         async function getMoviesByGenre() {  
-            let moviesByGenreRaw = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=${requestGenre}`)
+            let moviesByGenreRaw = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=${genreID}&page=1`)
             let moviesByGenre = await moviesByGenreRaw.json()
-            moviesByGenre = await moviesByGenre.results
-            res.render("moviesByGenre", {moviesByGenre})
+            res.render("moviesByGenre", {moviesByGenre, genreName, genreID, currentPage: 1})
         }
         getMoviesByGenre()
     }
+
 
 }
 

@@ -29,7 +29,7 @@
             </a>
             <ul class="dropdown-menu">
               <% allGenres.forEach(function(genre){ %>
-                <li><a class="dropdown-item" href="/genre/<%= genre.id %>"><%= genre.name %></a></li>
+                <li><a class="dropdown-item" href="/genre/<%= genre.id %>?genre=<%= genre.name.toLowerCase() %>"><%= genre.name %></a></li>
               <% }) %>
             </ul>
           </li>

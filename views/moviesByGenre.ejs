@@ -1,7 +1,9 @@
 <%- include('partials/header', {allGenres}) %>
 
+    <h3 class="text-light" style="text-align: center; margin-top: 2em"><%= genreName %></h3>
+    <hr style="width: 75%; text-align: center; margin: auto;" class="text-white">
     <div class="movies-by-genre">
-        <% moviesByGenre.forEach(function(movie){ %>
+        <% moviesByGenre.results.forEach(function(movie){ %>
             <% if (movie.backdrop_path === null) { %>
                 <a class="film-card none-display" style="text-decoration: none;" href="/movie/watch/<%= movie.id %>">
                     <div class="card darker-on-hover" style="width: 12rem; transition: .5s;">
@@ -38,7 +40,17 @@
                 </a>
             <% } %>
         <% }) %>
-
+    </div>
+    <div class="choose-page" style="margin:auto; margin-top: 2em; text-align: center">
+        <a type="button" class="btn btn-light disabled" href="">Before</a>
+        <p class="text-light current-page" style="text-align: center;"><%= currentPage %>
+            <% if (moviesByGenre.total_pages > 500) { %>
+                / 500
+            <% } else { %>
+                / <%= moviesByGenre.total_pages %>
+            <% } %>
+        </p>
+        <a type="button" class="btn btn-light" href="/list/genre/<%= genreName.toLowerCase() %>/<%= genreID %>?page=<%= currentPage + 1 %>">Next</a>
     </div>
 
 

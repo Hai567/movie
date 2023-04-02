@@ -1,4 +1,4 @@
-// @import "_variables";
+// Index Page (Home Page), List Page
 body{
     padding: 0;
     margin: 0;
@@ -66,8 +66,9 @@ body{
     }
 }
 
+// From PC Low resolution to below
 @media all and (max-width: 1024px) {
-    //
+    // Index page (Home Page)
     div.main{
         display: block !important;
         div.main-film-box-container{
@@ -84,7 +85,7 @@ body{
     }
     }
 
-    //
+    // Movie Details Page
     div.movie-main{
         div.movie-details-heading{
             img.movie-details-heading-background-img{
@@ -102,9 +103,21 @@ body{
             }
         }
     }
+
+    // Movie By Genre Page
+    div.movies-by-genre{
+        width: 100% !important;
+        a.film-card{
+            div.card{
+                width: 9em !important;
+            }
+        }
+    }
 }
+
+// For phone and below
 @media all and (max-width: 578px){
-    //
+    // Index page (Home page), List Page
     div.main, div.list-page-main{
         div.main-film-box-container, div.list-page-box-container{
             div.main-films-container, div.list-page-container{
@@ -119,7 +132,7 @@ body{
     }
 
 
-    //
+    // Movie Details Page
     div.movie-section{
         width: 100% !important;
         div.responsive-iframe-container{
@@ -130,7 +143,7 @@ body{
         display: none !important;
     }
 
-    //
+    // Choose page
     div.choose-page{
         width: 70% !important;
         p.current-page{
@@ -150,7 +163,7 @@ body{
 
 
 
-// 
+// Movie Details Page
 *{
 }
 body{
@@ -241,7 +254,7 @@ body{
 }
 
 
-//
+// Search Page and Movie By Genre Page
 body{
     div.searched-movies, div.movies-by-genre{
         margin-top: 2em !important;
@@ -272,7 +285,7 @@ body{
     }
 }
 
-//
+// 
 body{
     div.main{
         display: grid;
@@ -325,20 +338,28 @@ body{
     }
 }
 
-//
+// List Page
 div.box-container{
     div.list-page-main{
         display: block !important;
         div.list-page-box-container{
-            div.choose-page{
-                margin-top: 2em;
-                width: 30%;
-                display: flex;
-                justify-content: space-around;
-                p.current-page{
-                    margin: auto;
-                }
-            }
         }
     }
+}
+
+// Choose Page
+
+div.choose-page{
+    margin-top: 2em;
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    p.current-page{
+        margin: auto;
+    }
+}
+
+
+h3::first-letter {
+    text-transform: capitalize;
 }

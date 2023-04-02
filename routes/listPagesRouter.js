@@ -2,6 +2,7 @@ let express = require("express")
 let router = express.Router()
 let listPageController = require("../app/controllers/listPagesController")
 
-router.get("/:slug", listPageController.index)
+router.get("/genre/:genreName/:genreID", listPageController.forDifferentGenre)
+router.get("/:category", listPageController.index)
 
 module.exports = router

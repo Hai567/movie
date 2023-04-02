@@ -63,7 +63,11 @@ body {
   div.movie-main div.movie-section {
     display: block !important; }
     div.movie-main div.movie-section div.movie-section-side-bar {
-      margin-top: 2em !important; } }
+      margin-top: 2em !important; }
+  div.movies-by-genre {
+    width: 100% !important; }
+    div.movies-by-genre a.film-card div.card {
+      width: 9em !important; } }
 
 @media all and (max-width: 578px) {
   div.main div.main-film-box-container div.main-films-container, div.main div.main-film-box-container div.list-page-container, div.main div.list-page-box-container div.main-films-container, div.main div.list-page-box-container div.list-page-container, div.list-page-main div.main-film-box-container div.main-films-container, div.list-page-main div.main-film-box-container div.list-page-container, div.list-page-main div.list-page-box-container div.main-films-container, div.list-page-main div.list-page-box-container div.list-page-container {
@@ -222,10 +226,14 @@ body div.main {
 
 div.box-container div.list-page-main {
   display: block !important; }
-  div.box-container div.list-page-main div.list-page-box-container div.choose-page {
-    margin-top: 2em;
-    width: 30%;
-    display: flex;
-    justify-content: space-around; }
-    div.box-container div.list-page-main div.list-page-box-container div.choose-page p.current-page {
-      margin: auto; }
+
+div.choose-page {
+  margin-top: 2em;
+  width: 30%;
+  display: flex;
+  justify-content: space-around; }
+  div.choose-page p.current-page {
+    margin: auto; }
+
+h3::first-letter {
+  text-transform: capitalize; }
