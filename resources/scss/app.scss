@@ -3,10 +3,10 @@ body{
     padding: 0;
     margin: 0;
     div.box-container{
-        div.main{
+        div.main, div.list-page-main{
             display: grid;
             grid-template-columns: repeat(14, 1fr);
-            div.main-film-box-container{
+            div.main-film-box-container, div.list-page-box-container{
                 grid-column: 1/12;
                 display: flex;
                 flex-wrap: wrap;
@@ -22,7 +22,7 @@ body{
                         }
                     }
                 }
-                div.main-films-container{
+                div.main-films-container, div.list-page-container{
                     padding: 1em 3.5em;
                     display: flex;
                     flex-wrap: wrap;
@@ -33,7 +33,7 @@ body{
                         transition: .5s;
                         div.card{
                             width: 12rem; 
-                            div.main-film-thumbnail{
+                            div.main-film-thumbnail, div.list-page-thumbnail{
                                 position: relative;
                                 p.release-year{
                                     font-size: 12px;
@@ -98,12 +98,28 @@ body{
         div.movie-section{
             display: block !important;
             div.movie-section-side-bar{
-                display: none !important;
+                margin-top: 2em !important;
             }
         }
     }
 }
-@media all and (max-width: 568px){
+@media all and (max-width: 578px){
+    //
+    div.main, div.list-page-main{
+        div.main-film-box-container, div.list-page-box-container{
+            div.main-films-container, div.list-page-container{
+                padding: 1em .5em !important;
+                a.film-card{
+                    div.card{
+                        width: 7em !important;
+                    }
+                }
+            }
+        }
+    }
+
+
+    //
     div.movie-section{
         width: 100% !important;
         div.responsive-iframe-container{
@@ -112,6 +128,13 @@ body{
     }
     p.movie-details-heading-overview{
         display: none !important;
+    }
+
+    //
+    div.choose-page{
+        width: 70% !important;
+        p.current-page{
+        }
     }
 }
 
@@ -251,5 +274,71 @@ body{
 
 //
 body{
+    div.main{
+        display: grid;
+        grid-template-columns: repeat(14, 1fr);
+        div.main-film-box-container{
+            grid-column: 1/12;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            div.main-films-container{
+                padding: 1em 3.5em;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: center;
+                a.film-card{
+                    -webkit-filter: brightness(100%);
+                    transition: .5s;
+                    div.card{
+                        width: 12rem; 
+                        div.main-film-thumbnail{
+                            position: relative;
+                            p.release-year{
+                                font-size: 12px;
+                                position: absolute;
+                                padding: 5px 10px;
+                                margin: 0;
+                                background-color: green;
+                                border-radius: 100pc;
+                                color: white;
+                                bottom: 6px;
+                                right: 4px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        div.side-bar{
+            grid-column: 12/15;
+            h5{
+                text-align: center;
+                padding: 10px 10px;
+                border-radius: 60px;
+                background-color: #635985;
+                font-size: medium;
+                color: white;
+            }
+        }
+    }
+}
 
+//
+div.box-container{
+    div.list-page-main{
+        display: block !important;
+        div.list-page-box-container{
+            div.choose-page{
+                margin-top: 2em;
+                width: 30%;
+                display: flex;
+                justify-content: space-around;
+                p.current-page{
+                    margin: auto;
+                }
+            }
+        }
+    }
 }

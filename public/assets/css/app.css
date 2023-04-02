@@ -1,34 +1,34 @@
 body {
   padding: 0;
   margin: 0; }
-  body div.box-container div.main {
+  body div.box-container div.main, body div.box-container div.list-page-main {
     display: grid;
     grid-template-columns: repeat(14, 1fr); }
-    body div.box-container div.main div.main-film-box-container {
+    body div.box-container div.main div.main-film-box-container, body div.box-container div.main div.list-page-box-container, body div.box-container div.list-page-main div.main-film-box-container, body div.box-container div.list-page-main div.list-page-box-container {
       grid-column: 1/12;
       display: flex;
       flex-wrap: wrap;
       justify-content: center; }
-      body div.box-container div.main div.main-film-box-container div.main-film-select {
+      body div.box-container div.main div.main-film-box-container div.main-film-select, body div.box-container div.main div.list-page-box-container div.main-film-select, body div.box-container div.list-page-main div.main-film-box-container div.main-film-select, body div.box-container div.list-page-main div.list-page-box-container div.main-film-select {
         gap: 1.4em; }
-        body div.box-container div.main div.main-film-box-container div.main-film-select h3 a {
+        body div.box-container div.main div.main-film-box-container div.main-film-select h3 a, body div.box-container div.main div.list-page-box-container div.main-film-select h3 a, body div.box-container div.list-page-main div.main-film-box-container div.main-film-select h3 a, body div.box-container div.list-page-main div.list-page-box-container div.main-film-select h3 a {
           transition: .3s; }
-        body div.box-container div.main div.main-film-box-container div.main-film-select h3 a:hover {
+        body div.box-container div.main div.main-film-box-container div.main-film-select h3 a:hover, body div.box-container div.main div.list-page-box-container div.main-film-select h3 a:hover, body div.box-container div.list-page-main div.main-film-box-container div.main-film-select h3 a:hover, body div.box-container div.list-page-main div.list-page-box-container div.main-film-select h3 a:hover {
           color: #D8D8D8 !important; }
-      body div.box-container div.main div.main-film-box-container div.main-films-container {
+      body div.box-container div.main div.main-film-box-container div.main-films-container, body div.box-container div.main div.main-film-box-container div.list-page-container, body div.box-container div.main div.list-page-box-container div.main-films-container, body div.box-container div.main div.list-page-box-container div.list-page-container, body div.box-container div.list-page-main div.main-film-box-container div.main-films-container, body div.box-container div.list-page-main div.main-film-box-container div.list-page-container, body div.box-container div.list-page-main div.list-page-box-container div.main-films-container, body div.box-container div.list-page-main div.list-page-box-container div.list-page-container {
         padding: 1em 3.5em;
         display: flex;
         flex-wrap: wrap;
         gap: 20px;
         justify-content: center; }
-        body div.box-container div.main div.main-film-box-container div.main-films-container a.film-card {
+        body div.box-container div.main div.main-film-box-container div.main-films-container a.film-card, body div.box-container div.main div.main-film-box-container div.list-page-container a.film-card, body div.box-container div.main div.list-page-box-container div.main-films-container a.film-card, body div.box-container div.main div.list-page-box-container div.list-page-container a.film-card, body div.box-container div.list-page-main div.main-film-box-container div.main-films-container a.film-card, body div.box-container div.list-page-main div.main-film-box-container div.list-page-container a.film-card, body div.box-container div.list-page-main div.list-page-box-container div.main-films-container a.film-card, body div.box-container div.list-page-main div.list-page-box-container div.list-page-container a.film-card {
           -webkit-filter: brightness(100%);
           transition: .5s; }
-          body div.box-container div.main div.main-film-box-container div.main-films-container a.film-card div.card {
+          body div.box-container div.main div.main-film-box-container div.main-films-container a.film-card div.card, body div.box-container div.main div.main-film-box-container div.list-page-container a.film-card div.card, body div.box-container div.main div.list-page-box-container div.main-films-container a.film-card div.card, body div.box-container div.main div.list-page-box-container div.list-page-container a.film-card div.card, body div.box-container div.list-page-main div.main-film-box-container div.main-films-container a.film-card div.card, body div.box-container div.list-page-main div.main-film-box-container div.list-page-container a.film-card div.card, body div.box-container div.list-page-main div.list-page-box-container div.main-films-container a.film-card div.card, body div.box-container div.list-page-main div.list-page-box-container div.list-page-container a.film-card div.card {
             width: 12rem; }
-            body div.box-container div.main div.main-film-box-container div.main-films-container a.film-card div.card div.main-film-thumbnail {
+            body div.box-container div.main div.main-film-box-container div.main-films-container a.film-card div.card div.main-film-thumbnail, body div.box-container div.main div.main-film-box-container div.main-films-container a.film-card div.card div.list-page-thumbnail, body div.box-container div.main div.main-film-box-container div.list-page-container a.film-card div.card div.main-film-thumbnail, body div.box-container div.main div.main-film-box-container div.list-page-container a.film-card div.card div.list-page-thumbnail, body div.box-container div.main div.list-page-box-container div.main-films-container a.film-card div.card div.main-film-thumbnail, body div.box-container div.main div.list-page-box-container div.main-films-container a.film-card div.card div.list-page-thumbnail, body div.box-container div.main div.list-page-box-container div.list-page-container a.film-card div.card div.main-film-thumbnail, body div.box-container div.main div.list-page-box-container div.list-page-container a.film-card div.card div.list-page-thumbnail, body div.box-container div.list-page-main div.main-film-box-container div.main-films-container a.film-card div.card div.main-film-thumbnail, body div.box-container div.list-page-main div.main-film-box-container div.main-films-container a.film-card div.card div.list-page-thumbnail, body div.box-container div.list-page-main div.main-film-box-container div.list-page-container a.film-card div.card div.main-film-thumbnail, body div.box-container div.list-page-main div.main-film-box-container div.list-page-container a.film-card div.card div.list-page-thumbnail, body div.box-container div.list-page-main div.list-page-box-container div.main-films-container a.film-card div.card div.main-film-thumbnail, body div.box-container div.list-page-main div.list-page-box-container div.main-films-container a.film-card div.card div.list-page-thumbnail, body div.box-container div.list-page-main div.list-page-box-container div.list-page-container a.film-card div.card div.main-film-thumbnail, body div.box-container div.list-page-main div.list-page-box-container div.list-page-container a.film-card div.card div.list-page-thumbnail {
               position: relative; }
-              body div.box-container div.main div.main-film-box-container div.main-films-container a.film-card div.card div.main-film-thumbnail p.release-year {
+              body div.box-container div.main div.main-film-box-container div.main-films-container a.film-card div.card div.main-film-thumbnail p.release-year, body div.box-container div.main div.main-film-box-container div.main-films-container a.film-card div.card div.list-page-thumbnail p.release-year, body div.box-container div.main div.main-film-box-container div.list-page-container a.film-card div.card div.main-film-thumbnail p.release-year, body div.box-container div.main div.main-film-box-container div.list-page-container a.film-card div.card div.list-page-thumbnail p.release-year, body div.box-container div.main div.list-page-box-container div.main-films-container a.film-card div.card div.main-film-thumbnail p.release-year, body div.box-container div.main div.list-page-box-container div.main-films-container a.film-card div.card div.list-page-thumbnail p.release-year, body div.box-container div.main div.list-page-box-container div.list-page-container a.film-card div.card div.main-film-thumbnail p.release-year, body div.box-container div.main div.list-page-box-container div.list-page-container a.film-card div.card div.list-page-thumbnail p.release-year, body div.box-container div.list-page-main div.main-film-box-container div.main-films-container a.film-card div.card div.main-film-thumbnail p.release-year, body div.box-container div.list-page-main div.main-film-box-container div.main-films-container a.film-card div.card div.list-page-thumbnail p.release-year, body div.box-container div.list-page-main div.main-film-box-container div.list-page-container a.film-card div.card div.main-film-thumbnail p.release-year, body div.box-container div.list-page-main div.main-film-box-container div.list-page-container a.film-card div.card div.list-page-thumbnail p.release-year, body div.box-container div.list-page-main div.list-page-box-container div.main-films-container a.film-card div.card div.main-film-thumbnail p.release-year, body div.box-container div.list-page-main div.list-page-box-container div.main-films-container a.film-card div.card div.list-page-thumbnail p.release-year, body div.box-container div.list-page-main div.list-page-box-container div.list-page-container a.film-card div.card div.main-film-thumbnail p.release-year, body div.box-container div.list-page-main div.list-page-box-container div.list-page-container a.film-card div.card div.list-page-thumbnail p.release-year {
                 font-size: 12px;
                 position: absolute;
                 padding: 5px 10px;
@@ -38,9 +38,9 @@ body {
                 color: white;
                 bottom: 6px;
                 right: 4px; }
-    body div.box-container div.main div.side-bar {
+    body div.box-container div.main div.side-bar, body div.box-container div.list-page-main div.side-bar {
       grid-column: 12/15; }
-      body div.box-container div.main div.side-bar h5 {
+      body div.box-container div.main div.side-bar h5, body div.box-container div.list-page-main div.side-bar h5 {
         text-align: center;
         padding: 10px 10px;
         border-radius: 60px;
@@ -63,15 +63,21 @@ body {
   div.movie-main div.movie-section {
     display: block !important; }
     div.movie-main div.movie-section div.movie-section-side-bar {
-      display: none !important; } }
+      margin-top: 2em !important; } }
 
-@media all and (max-width: 568px) {
+@media all and (max-width: 578px) {
+  div.main div.main-film-box-container div.main-films-container, div.main div.main-film-box-container div.list-page-container, div.main div.list-page-box-container div.main-films-container, div.main div.list-page-box-container div.list-page-container, div.list-page-main div.main-film-box-container div.main-films-container, div.list-page-main div.main-film-box-container div.list-page-container, div.list-page-main div.list-page-box-container div.main-films-container, div.list-page-main div.list-page-box-container div.list-page-container {
+    padding: 1em .5em !important; }
+    div.main div.main-film-box-container div.main-films-container a.film-card div.card, div.main div.main-film-box-container div.list-page-container a.film-card div.card, div.main div.list-page-box-container div.main-films-container a.film-card div.card, div.main div.list-page-box-container div.list-page-container a.film-card div.card, div.list-page-main div.main-film-box-container div.main-films-container a.film-card div.card, div.list-page-main div.main-film-box-container div.list-page-container a.film-card div.card, div.list-page-main div.list-page-box-container div.main-films-container a.film-card div.card, div.list-page-main div.list-page-box-container div.list-page-container a.film-card div.card {
+      width: 7em !important; }
   div.movie-section {
     width: 100% !important; }
     div.movie-section div.responsive-iframe-container {
       padding-top: 55% !important; }
   p.movie-details-heading-overview {
-    display: none !important; } }
+    display: none !important; }
+  div.choose-page {
+    width: 70% !important; } }
 
 .darker-on-hover:hover {
   -webkit-filter: brightness(80%); }
@@ -172,3 +178,54 @@ body div.searched-movies, body div.movies-by-genre {
       color: white;
       bottom: 6px;
       right: 4px; }
+
+body div.main {
+  display: grid;
+  grid-template-columns: repeat(14, 1fr); }
+  body div.main div.main-film-box-container {
+    grid-column: 1/12;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; }
+    body div.main div.main-film-box-container div.main-films-container {
+      padding: 1em 3.5em;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center; }
+      body div.main div.main-film-box-container div.main-films-container a.film-card {
+        -webkit-filter: brightness(100%);
+        transition: .5s; }
+        body div.main div.main-film-box-container div.main-films-container a.film-card div.card {
+          width: 12rem; }
+          body div.main div.main-film-box-container div.main-films-container a.film-card div.card div.main-film-thumbnail {
+            position: relative; }
+            body div.main div.main-film-box-container div.main-films-container a.film-card div.card div.main-film-thumbnail p.release-year {
+              font-size: 12px;
+              position: absolute;
+              padding: 5px 10px;
+              margin: 0;
+              background-color: green;
+              border-radius: 100pc;
+              color: white;
+              bottom: 6px;
+              right: 4px; }
+  body div.main div.side-bar {
+    grid-column: 12/15; }
+    body div.main div.side-bar h5 {
+      text-align: center;
+      padding: 10px 10px;
+      border-radius: 60px;
+      background-color: #635985;
+      font-size: medium;
+      color: white; }
+
+div.box-container div.list-page-main {
+  display: block !important; }
+  div.box-container div.list-page-main div.list-page-box-container div.choose-page {
+    margin-top: 2em;
+    width: 30%;
+    display: flex;
+    justify-content: space-around; }
+    div.box-container div.list-page-main div.list-page-box-container div.choose-page p.current-page {
+      margin: auto; }

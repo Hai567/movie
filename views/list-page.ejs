@@ -1,0 +1,46 @@
+<%- include('partials/header',{allGenres}) %>
+    <div class="box-container">
+        <div class="list-page-main" style="margin: 4em 0;">
+            <div class="list-page-box-container">
+                <div class="list-page-container">
+                    <% data.results.forEach(film => { %>
+                        <a class="film-card" style="text-decoration: none;" href="/movie/watch/<%= film.id %>">
+                            <div class="card darker-on-hover" style="transition: .5s;">
+                                <div class="list-page-thumbnail">
+                                    <img src="https://image.tmdb.org/t/p/w500/<%= film.poster_path %>" class="card-img-top" alt="...">
+                                    <% if (typeof(film.release_date)  === "string") { %>
+                                        <% const [y,m,d] = film.release_date.split('-') %>
+                                        <p class="release-year"><%= y %></p>
+                                    <% } else { %> 
+                                        <p class="release-year">Coming Soon</p>
+                                    <% } %>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text title" style="text-align: center; color: black;"><%= film.title %></p>
+                                </div>
+                            </div>
+                        </a> 
+                    <% }) %>
+                </div>
+                <div class="choose-page">
+                    <% if (currentPage === 1) { %>
+                        <a type="button" class="btn btn-light disabled" href="?page=<%= currentPage - 1 %>">Before</a>
+                    <% } else { %>
+                        <a type="button" class="btn btn-light" href="?page=<%= currentPage - 1 %>">Before</a>
+                    <% } %>
+                    <p class="text-light current-page" style="text-align: center;"><%= currentPage %>
+                        <% if (data.total_pages > 500) { %>
+                            / 500
+                        <% } else { %>
+                            / <%= data.total_pages %>
+                        <% } %>
+                    </p>
+                    <a type="button" class="btn btn-light" href="?page=<%= currentPage + 1 %>">Next</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<%- include('partials/footer') %>
