@@ -117,6 +117,12 @@ body{
 
 // For phone and below
 @media all and (max-width: 578px){
+    // Carousel
+    div.carousel{
+        div.carousel-inner{
+            width: 100% !important;
+        }
+    }
     // Index page (Home page), List Page
     div.main, div.list-page-main{
         div.main-film-box-container, div.list-page-box-container{
@@ -149,6 +155,7 @@ body{
         p.current-page{
         }
     }
+
 }
 
 .darker-on-hover:hover{
@@ -362,4 +369,9 @@ div.choose-page{
 
 h3::first-letter {
     text-transform: capitalize;
+}
+
+.center{
+    text-align: center;
+    margin: auto;
 }

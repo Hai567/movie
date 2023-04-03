@@ -70,6 +70,8 @@ body {
       width: 9em !important; } }
 
 @media all and (max-width: 578px) {
+  div.carousel div.carousel-inner {
+    width: 100% !important; }
   div.main div.main-film-box-container div.main-films-container, div.main div.main-film-box-container div.list-page-container, div.main div.list-page-box-container div.main-films-container, div.main div.list-page-box-container div.list-page-container, div.list-page-main div.main-film-box-container div.main-films-container, div.list-page-main div.main-film-box-container div.list-page-container, div.list-page-main div.list-page-box-container div.main-films-container, div.list-page-main div.list-page-box-container div.list-page-container {
     padding: 1em .5em !important; }
     div.main div.main-film-box-container div.main-films-container a.film-card div.card, div.main div.main-film-box-container div.list-page-container a.film-card div.card, div.main div.list-page-box-container div.main-films-container a.film-card div.card, div.main div.list-page-box-container div.list-page-container a.film-card div.card, div.list-page-main div.main-film-box-container div.main-films-container a.film-card div.card, div.list-page-main div.main-film-box-container div.list-page-container a.film-card div.card, div.list-page-main div.list-page-box-container div.main-films-container a.film-card div.card, div.list-page-main div.list-page-box-container div.list-page-container a.film-card div.card {
@@ -237,3 +239,7 @@ div.choose-page {
 
 h3::first-letter {
   text-transform: capitalize; }
+
+.center {
+  text-align: center;
+  margin: auto; }

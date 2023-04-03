@@ -4,12 +4,14 @@ class siteController {
     homePage(req, res, next){
         let recommendingMoviesURL = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}`
         let weeklyTrendingMoviesURL = `https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}`
+        let nowInTheUSTheaterURL = `https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&region=US` 
         async function getData(){
             try {   
-                let rawResponses = await Promise.all([fetch(recommendingMoviesURL), fetch(weeklyTrendingMoviesURL)])
+                let rawResponses = await Promise.all([fetch(recommendingMoviesURL), fetch(weeklyTrendingMoviesURL), fetch(nowInTheUSTheaterURL)])
 
                 let recommendingMovies = await rawResponses[0].json()
                 let weeklyTrendingMovies = await rawResponses[1].json()
+                let nowInTheUSTheater = await rawResponses[2].json()
                 if (req.query.hasOwnProperty("_sort-category")) {
                     async function sortMoviesByCategory () {
                         let tvSortQuery = "/tv/popular"
@@ -26,7 +28,7 @@ class siteController {
                     }
                     sortMoviesByCategory()
                 }else{
-                res.render("index", {recommendingMovies, weeklyTrendingMovies})
+                res.render("index", {recommendingMovies, weeklyTrendingMovies, nowInTheUSTheater: nowInTheUSTheater.results})
                 }
                     
             } catch (error) {
