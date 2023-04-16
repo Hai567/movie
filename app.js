@@ -1,6 +1,5 @@
 require('dotenv').config()
 let express = require("express")
-let { json } = require("stream/consumers")
 let app = express()
 let PORT = process.env.PORT || 3000
 let ejs = require("ejs")
@@ -8,9 +7,21 @@ let mongoose = require("mongoose")
 let bodyParser = require("body-parser")
 let routeManager = require("./routes/routeManager")
 let SortMiddleware = require("./app/middlewares/SortMiddleware")
-let slugify = require("slugify")
 let GetAllGenresMiddleware = require("./app/middlewares/GetAllGenresMiddleware")
+let flash = require("connect-flash")
+let session = require("express-session")
+let passport = require('passport')
 
+mongoose.connect('mongodb://127.0.0.1:27017/movies')
+    .then(() => console.log("DB Connected"))
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    saveUninitialized: false,
+    resave: false
+}))
+
+app.use(passport.initialize())
+app.use(passport.session())
 
 app.set("view engine", "ejs")
 app.use(bodyParser.urlencoded({

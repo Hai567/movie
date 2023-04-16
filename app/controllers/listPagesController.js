@@ -1,6 +1,7 @@
 let API_KEY = process.env.API_KEY
 class listPageController {
 
+    // [GET] /list/:category
     index(req, res, next){
         async function getMovieListPage (){
             let category = req.params.category
@@ -13,8 +14,9 @@ class listPageController {
         getMovieListPage()
     }
 
+    // [GET] /list/genre/:genreName/:genreID
     forDifferentGenre(req, res, next){
-        async function getMovieGenreListePage (){
+        async function getMovieGenreListPage (){
             let genreID = req.params.genreID
             let page = req.query.page
             let genreName = req.params.genreName
@@ -24,7 +26,7 @@ class listPageController {
 
             res.render("list-page", {data, currentPage, heading:genreName})
         }
-    getMovieGenreListePage()
+    getMovieGenreListPage()
     }
 
 }
