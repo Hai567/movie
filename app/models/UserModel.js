@@ -3,6 +3,9 @@ let Schema = mongoose.Schema
 let findOrCreate = require("mongoose-findorcreate")
 
 let UserSchema = new Schema({
+    loginStrategy: String,
+    googleId: String,
+    facebookId: String,
     loginType: String,
     displayName: String,
     email: String, 

@@ -1,8 +1,10 @@
 <%- include('partials/header', {allGenres}) %>
+<script src="/assets/js/removeFbUglyRedirect.js"></script>
 
-
-
-
-
+    <div style="color: white;">
+        <%= user.displayName %>
+        <%= user.email %>
+        <%= user.loginType %>
+    </div>
 
 <%- include('partials/footer') %>

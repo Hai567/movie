@@ -8,6 +8,8 @@ let bodyParser = require("body-parser")
 let routeManager = require("./routes/routeManager")
 let SortMiddleware = require("./app/middlewares/SortMiddleware")
 let GetAllGenresMiddleware = require("./app/middlewares/GetAllGenresMiddleware")
+let CheckUserAuthenticated = require("./app/middlewares/CheckUserAuthenticatedMiddleware")
+let CORSMiddlware = require("./app/middlewares/CORSMiddleware")
 let flash = require("connect-flash")
 let session = require("express-session")
 let passport = require('passport')
@@ -32,6 +34,8 @@ app.use(express.static("public"))
 // Custom Middlewares
 app.use(GetAllGenresMiddleware)
 app.use(SortMiddleware)
+app.use(CheckUserAuthenticated)
+app.use(CORSMiddlware)
 routeManager(app)
 
 

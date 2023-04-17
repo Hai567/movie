@@ -12,7 +12,7 @@ module.exports = function initGoogleAuth2() {
         let JSONedProfile = profile._json
         User.findOrCreate({ 
             googleId: profile.id,
-            loginType: "Google",
+            loginStrategy: "Google",
             displayName: JSONedProfile.name,
             photo: JSONedProfile.picture,
             email: JSONedProfile.email
@@ -27,7 +27,7 @@ module.exports = function initGoogleAuth2() {
         done(null, user)
     });
     passport.deserializeUser(function (user, done) {  
-        User.findOne({email: user.email})
+        User.findOne({googleId: user.googleId})
             .then(user => {
                 if (user){
                     done(null, user)
