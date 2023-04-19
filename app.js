@@ -36,6 +36,7 @@ app.use(GetAllGenresMiddleware)
 app.use(SortMiddleware)
 app.use(CheckUserAuthenticated)
 app.use(CORSMiddlware)
+
 routeManager(app)
 
 

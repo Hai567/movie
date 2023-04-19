@@ -85,6 +85,18 @@ body {
   div.choose-page {
     width: 70% !important; } }
 
+.low-brightness {
+  -webkit-filter: brightness(80%); }
+
+.text-not-over-2-lines {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  /* number of lines to show */
+  line-clamp: 2;
+  -webkit-box-orient: vertical; }
+
 .darker-on-hover:hover {
   -webkit-filter: brightness(80%); }
 
@@ -243,3 +255,28 @@ h3::first-letter {
 .center {
   text-align: center;
   margin: auto; }
+
+div.container-fluid div.main-imgs {
+  margin: auto;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  position: relative;
+  grid-template-rows: 70% 1fr; }
+  div.container-fluid div.main-imgs div.background-img {
+    grid-column: 3/11; }
+    div.container-fluid div.main-imgs div.background-img img {
+      width: 100%;
+      height: 100%;
+      border-radius: 15px; }
+  div.container-fluid div.main-imgs div.avatar {
+    grid-column: 6/8;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+    grid-row: 1/2;
+    bottom: -5vh; }
+    div.container-fluid div.main-imgs div.avatar img {
+      border-radius: 50%;
+      width: 80%; }

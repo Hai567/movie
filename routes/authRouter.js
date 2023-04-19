@@ -39,8 +39,7 @@ router.get("/facebook/callback",
     successRedirect: "/"
 }));
 
-// [Login] Passport Twitter
-
+// [Logout]
 router.get("/logout", authController.logout)
 
 module.exports = router

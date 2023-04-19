@@ -16,28 +16,24 @@ class authController {
     async addUser(req, res, next){
         // Check if user use email and password to login
         User.find({loginStrategy: "Email and Password"})
-            .then(users => {
-                users.findOne({
-                    email: req.body.email,
-                    displayName: req.body.name
-                })
-                    .then(async (user) => {
-                        if (user){
-                            console.log("Already user")
-                            res.redirect("/auth/register")
-                        }else{
-                            let hashedPassword = await bcrypt.hash(req.body.password, 10)
-                            User.create({
-                                loginStrategy: "Email and Password",
-                                email: req.body.email,
-                                displayName: req.body.name,
-                                password: hashedPassword
-                            })
-                            res.redirect("/auth/login")
-                        }
+            .then( async (users) => {
+                let duplicatedUser = users.find((user) => user.email === req.body.email)
+                if (duplicatedUser){
+                    console.log("Already user")
+                    res.redirect("/auth/register")
+                }else{
+                    let hashedPassword = await bcrypt.hash(req.body.password, 10)
+                    User.create({
+                        loginStrategy: "Email and Password",
+                        email: req.body.email,
+                        displayName: req.body.name,
+                        password: hashedPassword,
+                        photo: "https://static.vecteezy.com/system/resources/previews/008/442/086/original/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg",
                     })
-                    .catch(err => console.log("Error encountered in authController.js", err))
+                    res.redirect("/auth/login")
+                }
             })
+            .catch(err => console.log("Error encountered in authController.js", err))
     }
 
     logout(req, res, next){

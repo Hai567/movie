@@ -10,7 +10,8 @@ let UserSchema = new Schema({
     displayName: String,
     email: String, 
     password: String,
-    photo: String
+    photo: String,
+    bio: String,
 })
 UserSchema.plugin(findOrCreate)
 module.exports = mongoose.model("Users", UserSchema)
